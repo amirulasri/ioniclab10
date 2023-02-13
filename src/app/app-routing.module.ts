@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'contact',
+    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
+  },
+  {
+    path: 'view-post',
+    loadChildren: () => import('./view-post/view-post.module').then( m => m.ViewPostPageModule)
+  },
+  {
+    path: 'edit-post/:id',
+    loadChildren: () => import('./edit-post/edit-post.module').then( m => m.EditPostPageModule)
+  },
 ];
 
 @NgModule({
